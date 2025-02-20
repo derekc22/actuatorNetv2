@@ -105,11 +105,6 @@ def _apply_perturbation(m, d):
     return d
 
 
-
-xs = []
-ts = []
-
-
 def _inverse_kinematics_control(t, m, d, joint_info):
     """Inverse kinematics foot trajectory tracking with proper joint Jacobian extraction."""
     _current_state = {}
@@ -181,8 +176,6 @@ def _inverse_kinematics_control(t, m, d, joint_info):
     if args.perturb:
         d = _apply_perturbation(m, d)
 
-    xs.append(current_angle)
-    ts.append(t)
     return m, d, _current_state
 
 
@@ -627,15 +620,3 @@ if __name__ == "__main__":
             geom_ids=geom_ids,
             joint_info=joint_info,
         )
-
-    import matplotlib
-    matplotlib.use('Agg')
-    import matplotlib.pyplot as plt
-    # Create plot
-    plt.plot(ts, xs)
-    # Add labels and title
-    plt.xlabel("X-axis")
-    plt.ylabel("Y-axis")
-    plt.title("Basic Line Plot")
-    # Show the plot
-    plt.savefig("shit.png")
