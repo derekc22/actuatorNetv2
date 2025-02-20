@@ -202,7 +202,7 @@ def create_state(model_path, save_dir):
             body_id = m.geom_bodyid[geom_id]
             body_name = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_BODY, body_id)
             # if body_name in ["trunk"]:
-            if body_name == "trunk": # THIS LINE MAY BE WRONG/BROKEN
+            if body_name == "trunk":
                 trunk_geom_ids.append(geom_id)
             elif body_name == "L_toe":
                 left_foot_geom_ids.append(geom_id)
