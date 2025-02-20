@@ -1,7 +1,7 @@
 <mujoco model="mini_biped">
     <compiler angle="radian"/>
     <size njmax="500" nconmax="100" />
-    <option timestep='0.0001' gravity='0 0 -1.81'/>
+    <option timestep='0.0001' gravity='0 0 -9.81'/>
 
     <default>
           <default class="force-torque">
